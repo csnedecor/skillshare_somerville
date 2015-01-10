@@ -1,37 +1,24 @@
-<% @workshops.each do |workshop| %>
-  <%= link_to(workshop.name, workshop_path(workshop)) %>
-<% end %>
+    <div class="row">
+      <div class="large-4 small-12 columns">
+        <%= image_tag("somervilleskillsharelogo.png") %>
+        <div class="hide-for-small panel">
+          <h3>Somerville Skillshare</h3>
+          <h5 class="subheader">40 free classes in 6 hours. Organized and taught by local residents. March 2nd, 2014 at the Somerville Armory.
+          </h5>
+        </div>
+      </div>
 
-<!--main row -->
-<div class="row">
-	<%= image_tag("map.jpg", class: "small-centered large-12 column headerImage") %>
+      <div class="large-8 columns">
+        <div class="row">
+          <% @workshops.each do |workshop| %>
+            <div class="large-4 small-6 columns">
+              <%= image_tag(workshop.workshop_pic.url) %>
 
-	<div class="classContent column large-8">
-	<h1 id="mainHeader">Imaginary Map Making</h1>
-	<p>“My intricate pen and watercolor drawings are inspired by the visual language of maps, as well as the fractal similarity that cities share with biological processes such as the patterns of cells and neurons. I invent each place as I draw, thinking about clustering of neighborhoods, patterns of roads and the individual selective memory that an inhabitant would use to navigate their city. The physical materials also influence each work; the topography of watercolor paper, the force of gravity on ink, or the tensile limitations of paper all structure my drawings in the same way that a landscape influences urban growth.”
-
-In this class, participants (artistic and otherwise—everyone is welcome!) will be encouraged to explore ideas of line and composition through the lens of cartography. Participants will learn techniques to organically “grow” map-like drawings from the shapes of familiar places, from stylized land forms, or completely from their own imagination.</p>
-
-
-</div>
-
-<div class="teacherContent column large-4">
-	<h1>Emily Garfield</h1>
-	<%= image_tag("emily-garfield.jpg", class: "small-centered column") %>
-<p>Emily Garfield creates intricate maps of imaginary places that explore the origins of cities and the function of maps themselves. She received her BA in Visual Arts from Brown University, where she also pursued studies in the brain’s response to art and aesthetic beauty through the Cognitive Science department. She has participated in exhibitions throughout the greater Boston area as well as New York and Philadelphia. Her work is in the collection of the Kamm Teapot Foundation as well as numerous private collections.</p>
-<button>Sign Up</button>
-</div>
-<div class="socialMediaButtons">
-	<a href=""><%= image_tag("facebook-icon.png")%></a>
-	<a href=""><%= image_tag("twitter-icon.png")%></a>
-	<a href=""><%= image_tag("email-icon.png")%></a>
-</div>
-</div>
-
-
-
-
-
-
-				
-		
+              <div class="panel">
+                <h5><%= link_to(workshop.name, workshop_path(workshop)) %></h5>
+                <h6 class="subheader"><%= workshop.description %></h6>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>

@@ -8,6 +8,8 @@ feature "User edits a workshop" do
       sign_in(user)
       visit root_path
 
+      click_on "Browse workshops"
+
       click_on @workshop.name
     end
 
