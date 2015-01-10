@@ -22,27 +22,37 @@ button {
 	margin: 15px auto;
 }
 
-.headerImage {
-	margin-top: 15px;
-}
-#mainHeader, h2 {
+
+#mainHeader, h1 {
 	text-align: center;
 	margin-bottom: 0;
 }
 
+.headerImage {
+	max-height: 400px;
+
+}
+
 p {
-	padding: 1em;
+	padding: 0 1em;
 }
 
 .socialMediaButtons {
 
-	width: 300px;
+	width: 141px;
 	margin: 20px auto;
+}
+
+.socialMediaButtons a img {
+
+	height: 44px;
+	width: 44px;
 }
 .test {
 	height: 100px;
 	width: 100px;
 	background-color: red;
 }
+
 
 
