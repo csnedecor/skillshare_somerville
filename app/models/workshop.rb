@@ -19,4 +19,8 @@ class Workshop < ActiveRecord::Base
   def date_is_in_the_future
     errors.add(:date, "must be in the future") if (date < DateTime.now)
   end
+
+  def formatted_date
+    date.strftime("%B %d, %Y at %H:%M")
+  end
 end
