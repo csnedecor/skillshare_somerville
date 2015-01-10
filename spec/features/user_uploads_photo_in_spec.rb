@@ -19,8 +19,6 @@ feature "user registers and adds a profile photo" do
     expect(page).to have_content("Welcome! You have signed up successfully.")
     expect(page).to have_content("Sign Out")
     expect(page).to have_css("img[src*='uploads']")
-
-    save_and_open_page
   end
 
 end
