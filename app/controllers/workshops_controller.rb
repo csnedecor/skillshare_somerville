@@ -32,6 +32,7 @@ class WorkshopsController < ApplicationController
       flash[:notice] = "Successfully updated your workshop!"
       redirect_to workshop_path(@workshop)
     else
+      render "edit"
     end
   end
 

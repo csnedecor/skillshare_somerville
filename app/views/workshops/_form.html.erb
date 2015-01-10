@@ -15,7 +15,7 @@
   </div>
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.datetime_field :date, autofocus: true %>
+    <%= f.datetime_select :date, start_year: Date.today.year %>
   </div>
   <div class="field">
     <%= f.label :street, "Street address" %><br />
