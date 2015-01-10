@@ -1,3 +1,5 @@
+
+
 <%= @workshop.name %>
 <%= @workshop.description %>
 <%= @workshop.date %>
@@ -6,3 +8,5 @@
 <%= @workshop.state %>
 <%= @workshop.zip %>
 <%= image_tag @workshop.workshop_pic.url %>
+
+<%= link_to "Edit Workshop", edit_workshop_path(@workshop) %>
