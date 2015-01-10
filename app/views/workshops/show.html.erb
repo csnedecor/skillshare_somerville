@@ -1,12 +1,14 @@
 
-
-<%= @workshop.name %>
-<%= @workshop.description %>
-<%= @workshop.date %>
-<%= @workshop.street %>
-<%= @workshop.city %>
-<%= @workshop.state %>
-<%= @workshop.zip %>
+<div class="bigBackground">
+  <div class="row">
+  <div class="column small-12 medium-8 large-6 medium-centered large-centered whiteBackground">
+   <span id="workshopName"> <%= @workshop.name %><br> </span>
+<%= @workshop.description %><br>
+<%= @workshop.date %><br>
+<%= @workshop.street %><br>
+<%= @workshop.city %><br>
+<%= @workshop.state %><br>
+<%= @workshop.zip %><br>
 <%= image_tag @workshop.workshop_pic.url %>
 
 <% if @registration.errors.any? %>
@@ -33,3 +35,8 @@ Registered users:
     <%= link_to "Edit Workshop", edit_workshop_path(@workshop) %>
   <% end %>
 <% end %>
+
+  </div>
+</div>
+
+</div>

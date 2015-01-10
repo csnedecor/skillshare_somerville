@@ -16,6 +16,24 @@
 
  */
 
+ body{
+ 	
+ }
+
+.bigBackground {
+	background-image: url("dance.jpg");
+ 	background-size: cover;
+ 	height: 100%;
+ 	color: white;
+}
+
+.whiteBackground {
+	background-color: #262626;
+}
+
+div.bigBackground h1 {
+	color: white;
+}
 button {
 
 	display: block;
@@ -30,7 +48,6 @@ button {
 
 .headerImage {
 	max-height: 400px;
-
 }
 
 p {
@@ -52,6 +69,11 @@ p {
 	height: 100px;
 	width: 100px;
 	background-color: red;
+}
+
+#workshopName {
+	font-size: 2em;
+	text-align: center;
 }
 
 
