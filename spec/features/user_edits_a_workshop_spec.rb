@@ -16,7 +16,7 @@ feature "User edits a workshop" do
 
       fill_in "Name", with: "A different class"
       fill_in "Description", with: "This is a really cool class on sushi."
-      select "2015", from: "workshop_date_1i"
+      select Date.today.year, from: "workshop_date_1i"
       select "January", from: "workshop_date_2i"
       select "28", from: "workshop_date_3i"
       select "10", from: "workshop_date_4i"
@@ -40,7 +40,7 @@ feature "User edits a workshop" do
 
       fill_in "Name", with: ""
       fill_in "Description", with: ""
-      select "2015", from: "workshop_date_1i"
+      select Date.today.year, from: "workshop_date_1i"
       select "January", from: "workshop_date_2i"
       select "28", from: "workshop_date_3i"
       select "10", from: "workshop_date_4i"
