@@ -11,7 +11,7 @@ feature "user registers and adds a profile photo" do
 
     fill_in "Email", with: "john@example.com"
     fill_in "Password", with: "password"
-    fill_in "Password confirmation", with: "password"
+    fill_in "user_password_confirmation", with: "password"
     attach_file "Profile photo", File.join(Rails.root, "spec/support/images/example.jpeg")
 
     click_button "Sign up"
