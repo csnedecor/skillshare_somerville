@@ -1,3 +1,5 @@
+
+
 <%= @workshop.name %>
 <%= @workshop.description %>
 <%= @workshop.date %>
@@ -21,3 +23,5 @@ Registered users:
 <% @workshop.registrations.each do |registration|%>
   <%= registration.user.email%>
 <%end%>
+
+<%= link_to "Edit Workshop", edit_workshop_path(@workshop) %>

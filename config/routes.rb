@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  root 'workshops#index'
   devise_for :users
-  resources :workshops, only: [:new, :create, :show] do
+
+  resources :workshops, except: :delete do
     resources :registrations
   end
-
-
 end

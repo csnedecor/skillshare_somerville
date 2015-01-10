@@ -5,4 +5,14 @@ class Workshop < ActiveRecord::Base
   belongs_to :user
   has_many :registrations
   has_many :users, through: :registrations
+
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :date, presence: true
+  validates :street, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :zip, presence: true
+  validates :user_id, presence: true
+
 end
