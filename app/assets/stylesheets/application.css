@@ -54,5 +54,7 @@ p {
 	background-color: red;
 }
 
-
+img#class-image {
+	max-width: 400px;
+}
 
