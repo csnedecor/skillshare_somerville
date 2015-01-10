@@ -24,11 +24,11 @@ class WorkshopsController < ApplicationController
   end
 
   def edit
-    @workshop = Workshop.find(params[:id])
+    @workshop = current_user.workshops.find(params[:id])
   end
 
   def update
-    @workshop = Workshop.find(params[:id])
+    @workshop = current_user.workshops.find(params[:id])
     if @workshop.update(workshop_params)
       flash[:notice] = "Successfully updated your workshop!"
       redirect_to workshop_path(@workshop)
