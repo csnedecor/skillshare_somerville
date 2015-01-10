@@ -12,4 +12,11 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  def destroy
+    @registration = Registration.find(params[:id])
+    @registration.destroy
+    flash[:notice]= "You are no longer registered for that class"
+    redirect_to workshop_path(params[:workshop_id])
+  end
+
 end
