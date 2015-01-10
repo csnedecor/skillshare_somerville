@@ -10,7 +10,7 @@ class WorkshopsController < ApplicationController
       flash[:notice] = "Successfully added your class!"
       redirect_to workshop_path(@workshop)
     else
-
+      render :new
     end
   end
 
