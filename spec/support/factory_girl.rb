@@ -10,10 +10,11 @@ FactoryGirl.define do
   factory :workshop do
     name "Pottery class"
     description "Eat and make some pottery"
-    date DateTime.now
+    date DateTime.now + 1.year
     street "44 Leland Rd"
     city "Norfolk"
     state "MA"
     zip "02056"
+    user
   end
 end
