@@ -15,13 +15,20 @@
   <% end %>
 <%end%>
 
-<%= form_for [@workshop,@registration] do |f| %>
-  <%= f.submit "Register" %>
-<% end %>
-
 Registered users:
 <% @workshop.registrations.each do |registration|%>
-  <%= registration.user.email%>
+  <%= registration.user.email %>
 <%end%>
+
+<%if current_user.registrations.where(workshop: @workshop).empty? %>
+  <%= form_for [@workshop, @registration] do |f| %>
+    <%= f.submit "Register" %>
+  <% end %>
+<%else%>
+<% registration = current_user.registrations.find_by(workshop: @workshop)%>
+    <%= link_to "Delete my registration", [@workshop, registration], method: :delete, data: { confirm: "Are you sure you want to remove your registration?"} %>
+<% end %>
+
+
 
 <%= link_to "Edit Workshop", edit_workshop_path(@workshop) %>
