@@ -52,9 +52,8 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'carrierwave'
 gem "fog"
-group :development, :test do
-  gem 'dotenv-rails'
-end
+gem "dotenv-rails"
+gem "aws-sdk"
 
 group :production do
   gem 'rails_12factor'

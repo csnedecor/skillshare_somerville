@@ -1,4 +1,4 @@
-class ProfilePhotoUploader < CarrierWave::Uploader::Base
+class WorkshopPicUploader < CarrierWave::Uploader::Base
   if Rails.env.production? || Rails.env.development?
     storage :fog
   else
