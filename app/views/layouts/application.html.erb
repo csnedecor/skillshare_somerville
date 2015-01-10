@@ -16,6 +16,8 @@
 
     <section class="top-bar-section">
       <ul class="right">
+        <li><%= link_to "Browse workshops", workshops_path %></li>
+        <li class="divider"></li>
         <li><%= link_to "Add a workshop", new_workshop_path %></li>
         <li class="divider"></li>
         <%- if current_user -%>
