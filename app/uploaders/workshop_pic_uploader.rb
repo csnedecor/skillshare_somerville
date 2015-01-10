@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class WorkshopPicUploaderUploader < CarrierWave::Uploader::Base
+class WorkshopPicUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

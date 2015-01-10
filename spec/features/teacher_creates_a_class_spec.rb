@@ -8,7 +8,7 @@ feature "Create a class" do
 
     visit root_path
 
-    click_on "Add a class"
+    click_on "Add a workshop"
 
     fill_in "Name", with: "A new class"
     fill_in "Description", with: "This is a really cool class on sushi."
@@ -18,10 +18,10 @@ feature "Create a class" do
     fill_in "State", with: "CA"
     fill_in "Zip code", with: "94028"
 
-    click_on "Add Class"
+    click_on "Add Workshop"
 
     expect(page).to have_content "Successfully added your class!"
     expect(page).to have_content "A new class"
-    expect(page).to have_content "This is a really cool class on sushi."    
+    expect(page).to have_content "This is a really cool class on sushi."
   end
 end
