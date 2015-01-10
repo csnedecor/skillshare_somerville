@@ -16,6 +16,7 @@ class WorkshopsController < ApplicationController
 
   def show
     @workshop = Workshop.find(params[:id])
+    @registration = Registration.new()
   end
 
   private
