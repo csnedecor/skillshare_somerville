@@ -1,3 +1,15 @@
+<% if @registration.errors.any? %>
+  <% @registration.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<%end%>
+
+Registered users:
+<% @workshop.registrations.each do |registration|%>
+  <div class="panel">
+    <%= registration.user.email %>
+  </div>
+<%end%>
 
 <div class="bigBackground">
   <div class="row">
@@ -11,32 +23,24 @@
 <%= @workshop.zip %><br>
 <%= image_tag @workshop.workshop_pic.url %>
 
-<% if @registration.errors.any? %>
-  <% @registration.errors.full_messages.each do |msg| %>
-    <%= msg %>
-  <% end %>
-<%end%>
-
-Registered users:
-<% @workshop.registrations.each do |registration|%>
-  <%= registration.user.email %>
-<%end%>
-
-<% if signed_in? %>
-  <%if current_user.registrations.where(workshop: @workshop).empty? %>
-    <%= form_for [@workshop, @registration] do |f| %>
-      <%= f.submit "Register" %>
+    <% if signed_in? %>
+      <%if current_user.registrations.where(workshop: @workshop).empty? %>
+        <div>
+          <%= form_for [@workshop, @registration] do |f| %>
+            <%= f.submit "Register", class: "button" %>
+          <% end %>
+        </div>
+      <%else%>
+      <% registration = current_user.registrations.find_by(workshop: @workshop)%>
+        <div>
+          <%= link_to "Delete my registration", [@workshop, registration], method: :delete, data: { confirm: "Are you sure you want to remove your registration?"}, class: "button" %>
+        </div>
+      <% end %>
+      <% if current_user == @workshop.user %>
+        <div>
+          <%= link_to "Edit Workshop", edit_workshop_path(@workshop), class: "button" %>
+        </div>
+      <% end %>
     <% end %>
-  <%else%>
-  <% registration = current_user.registrations.find_by(workshop: @workshop)%>
-      <%= link_to "Delete my registration", [@workshop, registration], method: :delete, data: { confirm: "Are you sure you want to remove your registration?"} %>
-  <% end %>
-  <% if current_user == @workshop.user %>
-    <%= link_to "Edit Workshop", edit_workshop_path(@workshop) %>
-  <% end %>
-<% end %>
-
   </div>
-</div>
-
 </div>
