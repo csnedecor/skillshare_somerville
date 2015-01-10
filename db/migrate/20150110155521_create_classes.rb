@@ -1,6 +1,6 @@
 class CreateClasses < ActiveRecord::Migration
   def change
-    create_table :classes do |t|
+    create_table :workshops do |t|
       t.string :name, null: false
       t.text :description, null: false
       t.datetime :date, null: false

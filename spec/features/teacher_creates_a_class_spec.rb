@@ -6,6 +6,22 @@ feature "Create a class" do
     user = FactoryGirl.create(:user)
     sign_in(user)
 
-    visit
+    visit root_path
+
+    click_on "Add a class"
+
+    fill_in "Name", with: "A new class"
+    fill_in "Description", with: "This is a really cool class on sushi."
+    fill_in "Date", with: DateTime.now
+    fill_in "Street address", with: "234 Smitt St"
+    fill_in "City", with: "Portola Valley"
+    fill_in "State", with: "CA"
+    fill_in "Zip code", with: "94028"
+
+    click_on "Add Class"
+
+    expect(page).to have_content "Successfully added your class!"
+    expect(page).to have_content "A new class"
+    expect(page).to have_content "This is a really cool class on sushi."    
   end
 end
