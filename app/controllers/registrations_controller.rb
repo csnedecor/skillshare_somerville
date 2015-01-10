@@ -2,7 +2,7 @@ class RegistrationsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def create
-    @registration = Registration.new(:workshop_id => params[:workshop_id])
+    @registration = Registration.find_or_initialize_by(:workshop_id => params[:workshop_id])
     @registration.user = current_user
     if @registration.save
       flash[:notice] = "Successfully registered!"
@@ -18,5 +18,4 @@ class RegistrationsController < ApplicationController
     flash[:notice]= "You are no longer registered for that class"
     redirect_to workshop_path(params[:workshop_id])
   end
-
 end
