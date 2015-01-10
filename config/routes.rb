@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'workshops#index'
+  root 'homes#index'
   devise_for :users
 
   resources :workshops, except: :delete do
