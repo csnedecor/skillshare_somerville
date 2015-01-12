@@ -17,20 +17,15 @@
  */
 
  body{
- 	
- }
 
-.bigBackground {
-	background-image: url("dance.jpg");
- 	background-size: cover;
- 	height: 100%;
- 	color: white;
-}
+ }
 
 .whiteBackground {
 	background-color: #262626;
 }
-
+.bigBackground{
+	color: white;
+}
 div.bigBackground h1 {
 	color: white;
 }
