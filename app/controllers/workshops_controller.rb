@@ -20,7 +20,11 @@ class WorkshopsController < ApplicationController
   end
 
   def index
-    @workshops = Workshop.all
+    if params[:search]
+      @workshops = Workshop.search(params[:search])
+    else
+      @workshops = Workshop.all
+    end
   end
 
   def edit
