@@ -23,4 +23,9 @@ class Workshop < ActiveRecord::Base
   def formatted_date
     date.strftime("%B %d, %Y at %H:%M")
   end
+
+  def self.search(search)
+    @workshops = Workshop.where('name ILIKE ?', "%#{search}%")
+  end
+
 end
